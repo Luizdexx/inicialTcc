@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="teste.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="sketch1715694887277.png" alt="Logo">
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="menu-item"><i class="fas fa-bell"></i> Notificação</a>
+                <a href="#" class="menu-item"><i class="fas fa-book"></i> Meus livros</a>
+            </nav>
+            <nav class="config-menu">
+                <a href="#" class="menu-item"><i class="fas fa-cog"></i> Configuração</a>
+            </nav>
+            <button class="create-post"><i class="fas fa-plus"></i> Criar post </button>
+        </aside>
+
+        <div class="content">
+            <header class="header">
+                <div class="search-box">
+                    <input type="text" placeholder="Pesquisar">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cancel-icon">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="search-data"></div>
+                </div>
+        
+                <div class="profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpODSRTILuA-icspb44zelWg14Of42mpXoyg&s" alt="Profile Picture">
+                </div>
+            </header>
+
+            <div class="posts">
+                <div class="post">
+                    <div class="post-header">
+                        <img src="https://m.media-amazon.com/images/I/71zbjeIkVjL._AC_UF894,1000_QL80_.jpg" alt="Book Cover">
+                        <div class="post-title">
+                            <h3>Os pilares da terra</h3>
+                            <span>@BookNerdJoe • Lv 1</span>
+                        </div>
+                    </div>
+                    <p class="post-content">Embora o livro seja extenso, a escrita fluida e a habilidade de Follett em manter a tensão e o interesse fazem com que o leitor fique preso do começo ao fim. "Os Pilares da Terra" não é apenas uma narrativa sobre a construção de uma catedral, mas uma jornada épica através das complexidades humanas e históricas.</p>
+                    <div class="post-footer">
+                        <button class="like-button">❤️</button>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-header">
+                        <img src="https://m.media-amazon.com/images/I/81h4CdNxdgL._AC_UF1000,1000_QL80_.jpg" alt="Book Cover">
+                        <div class="post-title">
+                            <h3>O príncipe</h3>
+                            <span>@BookNerdJoe • Lv 1</span>
+                        </div>
+                    </div>
+                    <p class="post-content">Nesta obra, que é um clássico sobre pensamento político, o grande escritor Maquiavel mostra como funciona a ciência política.</p>
+                    <div class="post-footer">
+                        <button class="like-button">❤️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const searchBox = document.querySelector(".search-box");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const searchInput = document.querySelector("input");
+        const searchData = document.querySelector(".search-data");
+        searchBtn.onclick =()=>{
+          searchBox.classList.add("active");
+          searchBtn.classList.add("active");
+          searchInput.classList.add("active");
+          cancelBtn.classList.add("active");
+          searchInput.focus();
+          if(searchInput.value != ""){
+            var values = searchInput.value;
+            searchData.classList.remove("active");
+            searchData.innerHTML = "Pesquisa: " + "<span style='font-weight: 500;'>" + values + "</span>";
+          }else{
+            searchData.textContent = "";
+          }
+        }
+        cancelBtn.onclick =()=>{
+          searchBox.classList.remove("active");
+          searchBtn.classList.remove("active");
+          searchInput.classList.remove("active");
+          cancelBtn.classList.remove("active");
+          searchData.classList.toggle("active");
+          searchInput.value = "";
+        }
+      </script>
+</body>
+</html>
+
+<!-- <div class="search-section">
+    <input type="text" class="search-bar" id="searchBar" placeholder="Pesquisar">
+    <i class="fas fa-search search-icon" id="searchIcon"></i> -->
